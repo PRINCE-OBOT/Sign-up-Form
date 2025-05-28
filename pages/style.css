@@ -2,7 +2,6 @@
 
 :where(h1, h2, h3, h4, h5, h6, p) {
   margin: 0;
-  padding: 0;
 }
 
 :root {
@@ -12,14 +11,17 @@
   --right-content-pd-max: 45px;
   --small-vw: 1vw;
 
-  --btn-pd: 25px;
-  --btn-bg-clr : #596D48;
+  --inp-border-clr : #E5E7EB;
 
-  --fw-small : 400;
+  --btn-pd: 25px;
+  --btn-bg-clr: #596d48;
+
+  --fw-small: 400;
 }
 
-body{
-    font-weight: 700;
+body {
+  font-weight: 700;
+  font-family: 'Gill Sans MT', sans-serif;
 }
 
 .container {
@@ -38,13 +40,21 @@ body{
   flex-direction: column;
   justify-content: space-between;
 }
-.left-side h6{
-    color: #fff;
-    height: 30px;
-    text-align: center;
-    font-weight: var(--fw-small);
-    & a{
-        color: inherit;
+.left-side h6 {
+  color: #fff;
+  height: 30px;
+  text-align: center;
+  font-weight: var(--fw-small);
+  & a {
+    color: inherit;
+  }
+}
+
+a{
+    display: inline-block;
+    transition: 300ms;
+    &:hover{
+        text-decoration-color: transparent;
     }
 }
 .right-side {
@@ -77,11 +87,11 @@ body{
   max-height: var(--odin-img-height);
 }
 .odin {
-  font-family: "Norse-Bold";
+  font-family: "Norse-Bold", sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #fff;
-  font-size: 4.5rem;
+  font-size: 3rem;
 }
 .right-side-header {
   display: flex;
@@ -110,25 +120,23 @@ main h2 {
   );
 }
 form {
-  display: flex;
-  flex-wrap: wrap;
   font-weight: var(--fw-small);
-  & > * {
-    flex: 1;
-    min-width: 300px;
-    min-height: 300px;
+  padding: 26px 0;
+  & > div{
     display: flex;
-    gap: 30px;
-    flex-direction: column;
-    padding: 20px 0 10px
-      clamp(
+    flex-wrap: wrap;
+    & > div{
+        flex: 1;
+        max-width: 500px;
+        min-width: 400px;
+        padding: 10px  clamp(
         var(--right-content-pd),
         var(--right-content-pd) + var(--small-vw),
         var(--right-content-pd-max)
-      );
+        );
+    }
   }
 }
-
 form
   input:where([type="text"], [type="email"], [type="tel"], [type="password"]) {
   display: block;
@@ -136,7 +144,18 @@ form
   height: 44px;
   width: 90%;
   border-radius: 10px;
+  border: 2px solid var(--inp-border-clr);
+  padding-left: 10px;
+  &:invalid{
+    --inp-border-clr : #900;
+  }
+  &:focus{
+    --inp-border-clr : rgb(77 136 209);
+    box-shadow: 0.5px 0.5px 10px rgba(0 0 0 / 0.2);
+    outline: none;
+  }
 }
+
 .footer {
   min-height: 300px;
   padding: 30px 30px 30px
