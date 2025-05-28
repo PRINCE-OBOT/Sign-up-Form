@@ -4,24 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/style.css">
-    <title>Document</title>
+    <title>Sign up Form</title>
+    <style>
+        @font-face {
+            font-family: 'Norse-Bold';
+            src: url(./fonts/Norse-Bold.woff2) format(woff2);
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="left-side">
-            <div class="left-side-content">
+            <div class="left-side-header">
                 <div class="odin-img-foreground">
-                    <img class="odin-img" src="./images/1.jpeg" alt="">
+                    <img class="odin-img" src="./images/odin-lined.png" alt="">
+                    <span class="odin">ODIN</span>
                 </div>
             </div>
+            <h6>Photo by <a href="https://unsplash.com/photos/25xggax4bSA">Halie West</a> on <a href="https://unsplash.com/photos/25xggax4bSA">Unsplash</a></h6>
         </div>
         <div class="right-side">
-            <div class="right-side-content">
+            <div class="right-side-header">
                 <p>This is not a real online service! You know you need  something
                     like this in your life to help you realize your deepest dreams. <br>
-                    Sign up now to get started.
+                    Sign up <em>now</em> to get started.
                 </p>
                 <p>You know you want to.</p>
+            </div>
+            <main>
+                <h2>Let's do this!</h2>
+                <form action="" id="create_account">
+                    <div class="form_left_side">
+                        <div>
+                            <label for="fisrt_name">FIRST NAME</label>
+                            <input type="text" id="fisrt_name">
+                        </div>
+                        <div>
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div>
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" >
+                        </div>
+                    </div>
+                    <div class="form_right_side">
+                        <div>
+                            <label for="last_name">LAST NAME</label>
+                            <input type="text" id="last_name" >
+                        </div>
+                        <div>
+                            <label for="tel">PHONE NUMBER</label>
+                            <input type="tel" id="tel">
+                        </div>
+                        <div>
+                            <label for="confirm_password">CONFIRM PASSWORD</label>
+                            <input type="password" id="confirm_password">
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <div class="footer">
+                <button form="create_account">Create Account</button>
+                <p>Already have an account? <a href="">Log in</a></p>
             </div>
         </div>
     </div>
