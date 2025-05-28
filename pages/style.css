@@ -1,0 +1,59 @@
+@import '../modernize-normalize/style.css';
+
+:where(h1, h2, h3, h4, h5, h6){
+    margin: 0;
+}
+
+:root{
+    --odin-img-height : 100px;
+    --left-content-pd : 20px;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    background: #eee;
+    & > *{
+        flex: 1;
+    }
+}
+.left-side{
+    max-width: 350px;
+    background: url(../images/2.jpeg);
+    min-width: fit-content;
+}
+.right-side{
+    background: #467;
+    min-width: 600px;
+    padding: 0 0 20px clamp(var(--left-content-pd), var(--left-content-pd) + 1vw, 40px);
+    background: #ddde;
+}
+.odin-img-foreground{
+    padding: 10px;
+    width: 100%;
+    background: rgba(0 0 0 / 0.4);
+}
+.odin-img{
+    aspect-ratio: 16/9;
+    max-height: var(--odin-img-height);
+    display: block;
+    margin: 0 auto 0;
+}
+.left-side-content, 
+.right-side-content{
+    height: clamp(var(--odin-img-height) + 80px, var(--odin-img-height) + 15vw, 350px);
+}
+.left-side-content{
+    display: flex;
+    align-items: end;
+}
+.right-side-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 20px;
+}   
+p{
+    margin: 0;
+    max-width: 90ch;
+}
